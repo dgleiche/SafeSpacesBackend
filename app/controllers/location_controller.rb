@@ -2,7 +2,7 @@ class LocationController < ApplicationController
 
   def location_info
     google_place_id = params[:google_place_id]
-    location = Location.find_by(google_place_id: google_place_id).first
+    location = Location.find_by(google_place_id: google_place_id)
     accessibility_informations = AccessibilityInformation.find_by(location: location)
 
     render json: [location: location.to_json, information: accessibility_informations.to_json].to_json
@@ -41,7 +41,7 @@ class LocationController < ApplicationController
   def location_params
     location_type_name = params[:location][:location_type_name]
     unless location_type_name.nil?
-      location_type = LocationType.find_or_create_by(name: location_type_name).first
+      location_type = LocationType.find_or_create_by(name: location_type_name)
       params[:location][:location_type_id] = location_type.id
     end
 
@@ -51,7 +51,7 @@ class LocationController < ApplicationController
   def accessibility_information_params
     google_place_id = params[:accessibility_information][:google_place_id]
     unless google_place_id.nil?
-      location_id = Location.find_by(google_place_id: google_place_id).first
+      location_id = Location.find_by(google_place_id: google_place_id)
       params[:accessibility_information][:location_id] = location_id
     end
 

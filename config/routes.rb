@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   # URL: POST /location/get
   # INPUT FORMAT:
   # {
-  #   google_place_id: Integer (required)
+  #   google_place_id: String (required)
   # }
   # RETURNS:
   # {
@@ -25,7 +25,7 @@ Rails.application.routes.draw do
   #     zip: String
   #     lat: Float
   #     long: Float
-  #     google_place_id: Integer
+  #     google_place_id: String
   #     location_type_id: Integer (replaced if location_type_name is specified)
   #   }
   # }
@@ -45,7 +45,7 @@ Rails.application.routes.draw do
   #     zip: String
   #     lat: Float
   #     long: Float
-  #     google_place_id: Integer
+  #     google_place_id: String
   #     location_type_id: Integer (replaced if location_type_name is specified)
   #   }
   # }
@@ -56,7 +56,7 @@ Rails.application.routes.draw do
   # URL: POST /location/add_information
   # INPUT FORMAT:
   # {accessibility_information: {
-  #     google_place_id: Integer
+  #     google_place_id: String
   #     location_id: Integer (replaced if google_place_id is specified)
   #     description: String
   #     gen_accessible: Bool
@@ -84,7 +84,7 @@ Rails.application.routes.draw do
   # INPUT FORMAT:
   # {accessibility_information: {
   #     id: Integer (REQUIRED)
-  #     google_place_id: Integer
+  #     google_place_id: String
   #     location_id: Integer (replaced if google_place_id is specified)
   #     description: String
   #     gen_accessible: Bool

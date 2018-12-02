@@ -8,7 +8,7 @@ class CreateLocations < ActiveRecord::Migration[5.2]
       t.string :zip
       t.float :lat
       t.float :long
-      t.integer :google_place_id
+      t.string :google_place_id
       t.references :location_type, foreign_key: true
 
       t.timestamps
