@@ -6,7 +6,7 @@ class CreateAccessibilityInformations < ActiveRecord::Migration[5.2]
       t.boolean :ramps
       t.boolean :smooth
       t.boolean :elevators
-      t.boolean :description
+      t.text :description
       t.boolean :brail
       t.boolean :sound
       t.float :sound_measure

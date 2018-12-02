@@ -78,7 +78,7 @@ Rails.application.routes.draw do
   # }
   # RETURNS:
   # JSON object representing inputted accessibility information
-  post 'location/add_information' => 'location#add_accessesibility_information'
+  post 'location/add_information' => 'location#add_accessibility_information'
 
   # URL: POST /location/update_information
   # INPUT FORMAT:

@@ -32,9 +32,10 @@ def upload_location(default_location)
     zip = row[4]
     lat = row[5].to_f
     long = row[6].to_f
+    place_id = row[17]
 
     location = Location.create(name: name, address: address, city: city, state: state, zip: zip, lat: lat, long: long,
-                               location_type: default_location)
+                               location_type: default_location, google_place_id: place_id)
 
     description = row[7]
     gen_accessible = row[8] == 'True' ? 1 : 0
